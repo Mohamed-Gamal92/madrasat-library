@@ -3,167 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتبة المعارف – جرد الأدوات والملفات الدراسية</title>
-
-    <!-- Google Fonts -->
+    <title>مكتبة المعارف – جرد الأدوات المدرسية</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="assets/style.css?v=20251117">
-
-    <!-- 🔐 كود تسجيل الدخول -->
-    <script>
-        if (localStorage.getItem("madrasat_logged_in") !== "yes") {
-            window.location.href = "login.html";
-        }
-    </script>
 </head>
-
 <body>
-
-<header class="site-header">
-    <div class="container">
-        <div class="header-content">
-
-            <h1 class="site-title">📚 مكتبة المعارف – للأدوات المدرسية</h1>
-            <p class="site-subtitle">منصة بسيطة لإدارة الأدوات والملفات الدراسية</p>
-
+    <header class="site-header">
+        <div class="container">
+            <div class="logo-group">
+                <div class="logo" aria-hidden="true">📚</div>
+                <div class="titles">
+                    <h1 id="siteTitle">مكتبة المعارف – جرد الأدوات المدرسية</h1>
+                    <p id="siteTagline">منصة بسيطة لإدارة مخزون الأدوات والملفات الدراسية</p>
+                </div>
+            </div>
+            <button class="menu-toggle" aria-label="فتح القائمة">☰</button>
             <nav class="main-nav" aria-label="القائمة الرئيسية">
                 <a href="#inventory" class="nav-link">الجرد</a>
                 <a href="#stages" class="nav-link">الملفات الدراسية</a>
                 <a href="#guide" class="nav-link">طريقة التعديل</a>
-                <a href="#" id="logoutLink" class="nav-link" style="color:#c0392b;font-weight:700;">تسجيل الخروج</a>
             </nav>
-
         </div>
-    </div>
-</header>
+    </header>
 
-<!-- HERO SECTION -->
-<section class="hero">
-    <div class="container hero-flex">
-        <div class="hero-image-box">
-            <img src="assets/store.jpg" alt="مكتبة الأدوات" class="hero-image">
-        </div>
-
-        <div class="hero-text">
-            <p class="hero-ready">جاهز للاستخدام</p>
-            <h2 class="hero-title">كل ما يلزمك لإدارة السنة الدراسية بسهولة</h2>
-            <p class="hero-desc">
-                تتبع الأدوات المدرسية، حمل الملفات، وشارك الروابط مع الطاقم الإداري في مكان واحد بسيط.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#inventory" class="main-btn">فتح جرد الأدوات</a>
-                <a href="#guide" class="main-btn secondary">طريقة التعديل</a>
+    <main>
+        <section class="hero" id="hero" aria-labelledby="heroTitle">
+            <div class="container hero__content">
+                <div>
+                    <p class="hero__eyebrow" id="heroEyebrow">جاهز للاستخدام</p>
+                    <h2 class="hero__title" id="heroTitle">كل ما يلزمك لإدارة الجرد المدرسي بسهولة</h2>
+                    <p class="hero__subtitle" id="heroSubtitle">
+                        تتبع الأدوات المدرسية، حمل الملفات، وشارك الروابط مع الطاقم الإداري في مكان واحد بسيط.
+                    </p>
+                    <div class="hero__actions">
+                        <a id="heroPrimaryCta" class="btn btn--primary" href="#" target="_blank" rel="noopener">فتح جرد الأدوات</a>
+                        <a id="heroSecondaryCta" class="btn btn--ghost" href="#guide">طريقة التعديل</a>
+                    </div>
+                </div>
+                <div class="hero__card" aria-live="polite">
+                    <img id="heroCardImage" class="hero__image" src="" alt="" hidden>
+                    <div id="heroCardIcon" class="hero__illustration">✏️</div>
+                    <p id="heroCardTitle">إدارة جاهزة</p>
+                    <p id="heroCardSubtitle">بدون برمجة</p>
+                    <p id="heroCardDescription" class="hero__card-desc">اختر الملفات وروابط الجرد من لوحة الإعدادات، وسيتم تحديث الموقع تلقائياً.</p>
+                </div>
             </div>
+        </section>
+
+        <section class="inventory" id="inventory">
+            <div class="container">
+                <div class="section-heading">
+                    <h3>جرد الأدوات</h3>
+                    <p>رابط مباشر لآخر ملف جرد للأدوات المدرسية.</p>
+                </div>
+                <div class="inventory__card">
+                    <h4 id="inventoryTitle">فتح جرد الأدوات</h4>
+                    <p id="inventoryDescription">يُفتح ملف Google Sheet في تبويب جديد لعرض أو تحديث المخزون.</p>
+                    <a id="inventoryButton" class="btn btn--secondary" href="#" target="_blank" rel="noopener">فتح ملف الجرد</a>
+                    <p class="inventory__hint" id="inventoryHint">يمكن تغيير الرابط من ملف الإعدادات بسهولة.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stages" id="stages">
+            <div class="container">
+                <div class="section-heading">
+                    <h3>الملفات الدراسية</h3>
+                    <p>اضغط على أي مستوى لعرض الملفات والروابط المرتبطة به.</p>
+                </div>
+                <div class="stages__grid" id="stagesContainer" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section class="guide" id="guide">
+            <div class="container">
+                <div class="section-heading">
+                    <h3>طريقة التعديل</h3>
+                    <p>تستطيع تحديث المحتوى دون لمس الشفرة البرمجية.</p>
+                </div>
+                <div class="guide__grid">
+                    <article class="guide__step">
+                        <h4>1. تحديث المعلومات العامة</h4>
+                        <p>افتح ملف <strong>assets/config.js</strong> باستخدام أي محرر نصوص، ثم حدِّث العنوان، الشعار، والأزرار في قسم <code>branding</code> و <code>hero</code>.</p>
+                    </article>
+                    <article class="guide__step">
+                        <h4>2. تغيير روابط الجرد</h4>
+                        <p>داخل نفس الملف، عدِّل قيمة <code>inventorySheetUrl</code> إلى رابط Google Sheet الجديد. يمكن أيضاً تحديث النصوص التوضيحية.</p>
+                    </article>
+                    <article class="guide__step">
+                        <h4>3. إضافة مرحلة أو ترم جديد</h4>
+                        <p>انسخ أي عنصر داخل المصفوفة <code>academicStages</code> وعدِّل البيانات (مثل <code>grade</code> و <code>term</code>). يمكن إضافة روابط لملفات PDF أو صور أو Google Drive بكل سهولة.</p>
+                    </article>
+                    <article class="guide__step">
+                        <h4>4. حفظ ومراجعة</h4>
+                        <p>بعد الحفظ، أعد تحميل الصفحة في المتصفح لمشاهدة التغييرات فوراً. لا حاجة لأي خطوات إضافية.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p id="footerNote">© <span id="currentYear"></span> مكتبة المعارف. تصميم ودّي بألوان بسيطة.</p>
         </div>
-    </div>
-</section>
+    </footer>
 
-<!-- INVENTORY SECTION -->
-<section id="inventory" class="inventory-section">
-    <div class="container">
-        <h2 class="section-title">📦 الجرد</h2>
-
-        <div class="box-grid">
-            <a href="https://docs.google.com/spreadsheets/d/1otjNU6Ft2lJkDYpHZtotDywowQ7oYRSsUJVx7IxTdSA/edit?usp=sharing"
-               target="_blank" class="box">
-                <img src="assets/inventory.png" alt="جرد المكتبة" class="box-icon">
-                <h3 class="box-title">جرد المكتبة</h3>
-                <p class="box-text">اضغط لفتح الجرد مباشرة</p>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- STAGES SECTION -->
-<section id="stages" class="stages-section">
-    <div class="container">
-        <h2 class="section-title">📁 الملفات الدراسية</h2>
-
-        <div class="stage-grid">
-
-            <a href="assets/kg1-term1/" class="stage-card">
-                <img src="assets/kg1.png" class="stage-icon">
-                <h3 class="stage-title">KG1 – الترم الأول</h3>
-            </a>
-
-            <a href="assets/kg2-term1/" class="stage-card">
-                <img src="assets/kg2.png" class="stage-icon">
-                <h3 class="stage-title">KG2 – الترم الأول</h3>
-            </a>
-
-            <a href="assets/سنة أولى-term1/" class="stage-card">
-                <img src="assets/grade1.png" class="stage-icon">
-                <h3 class="stage-title">سنة أولى – الترم الأول</h3>
-            </a>
-
-            <a href="assets/سنة تانية-term1/" class="stage-card">
-                <img src="assets/grade2.png" class="stage-icon">
-                <h3 class="stage-title">سنة تانية – الترم الأول</h3>
-            </a>
-
-            <a href="assets/سنة تالتة-term1/" class="stage-card">
-                <img src="assets/grade3.png" class="stage-icon">
-                <h3 class="stage-title">سنة تالتة – الترم الأول</h3>
-            </a>
-
-            <a href="assets/سنة رابعة-term1/" class="stage-card">
-                <img src="assets/grade4.png" class="stage-icon">
-                <h3 class="stage-title">سنة رابعة – الترم الأول</h3>
-            </a>
-
-            <a href="assets/سنة خامسة-term1/" class="stage-card">
-                <img src="assets/grade5.png" class="stage-icon">
-                <h3 class="stage-title">سنة خامسة – الترم الأول</h3>
-            </a>
-
-            <a href="assets/سنة سادسة-term1/" class="stage-card">
-                <img src="assets/grade6.png" class="stage-icon">
-                <h3 class="stage-title">سنة سادسة – الترم الأول</h3>
-            </a>
-
-        </div>
-    </div>
-</section>
-
-<!-- GUIDE SECTION -->
-<section id="guide" class="guide-section">
-    <div class="container">
-        <h2 class="section-title">🛠 طريقة التعديل</h2>
-
-        <p class="guide-text">
-            يمكنك تعديل الملفات الدراسية من خلال مجلد <strong>assets</strong>.  
-            كما يمكنك تحديث رابط الجرد بسهولة.
-        </p>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-    <div class="container">
-        <p>© 2025 مكتبة المعارف – جميع الحقوق محفوظة</p>
-    </div>
-</footer>
-
-<!-- 🔓 تسجيل الخروج -->
-<script>
-    const logoutLink = document.getElementById("logoutLink");
-    if (logoutLink) {
+    <script src="assets/config.js?v=20251117"></script>
+    <script src="assets/script.js?v=20251117"></script>
+	
+    <!-- تسجيل الخروج -->
+    <script>
+      const logoutLink = document.getElementById("logoutLink");
+      if (logoutLink) {
         logoutLink.onclick = function (e) {
-            e.preventDefault();
-            localStorage.removeItem("madrasat_logged_in");
-            window.location.href = "login.html";
+          e.preventDefault();
+          localStorage.removeItem("madrasat_logged_in");
+          window.location.href = "login.html";
         };
-    }
-</script>
+      }
+    </script>
 
-<!-- Scripts -->
-<script src="assets/config.js"></script>
-<script src="assets/script.js"></script>
+    <!-- Scripts -->
+    <script src="assets/config.js"></script>
+    <script src="assets/script.js"></script>	
 
 </body>
 </html>
