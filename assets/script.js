@@ -34,7 +34,11 @@
     }
 
     function renderHero() {
+<<<<<<< HEAD
         const { hero } = config;
+=======
+        const { hero, heroCard } = config;
+>>>>>>> main
         setTextContent('heroEyebrow', hero.eyebrow);
         setTextContent('heroTitle', hero.title);
         setTextContent('heroSubtitle', hero.subtitle);
@@ -50,6 +54,75 @@
             if (hero.secondaryCtaLabel) secondaryCta.textContent = hero.secondaryCtaLabel;
             if (hero.secondaryCtaTarget) secondaryCta.href = hero.secondaryCtaTarget;
         }
+<<<<<<< HEAD
+=======
+
+        const cardEl = document.querySelector('.hero__card');
+        const iconEl = document.getElementById('heroCardIcon');
+        const imageEl = document.getElementById('heroCardImage');
+        const titleEl = document.getElementById('heroCardTitle');
+        const subtitleEl = document.getElementById('heroCardSubtitle');
+        const descriptionEl = document.getElementById('heroCardDescription');
+
+        if (heroCard?.imageUrl && imageEl) {
+            imageEl.src = heroCard.imageUrl;
+            imageEl.alt = heroCard.imageAlt || '';
+            imageEl.hidden = false;
+            if (iconEl) {
+                iconEl.hidden = true;
+            }
+        } else {
+            if (imageEl) {
+                imageEl.hidden = true;
+                imageEl.removeAttribute('src');
+            }
+            if (iconEl) {
+                iconEl.hidden = false;
+                if (heroCard?.icon) {
+                    iconEl.textContent = heroCard.icon;
+                }
+            }
+        }
+
+        if (titleEl) {
+            if (heroCard?.title) {
+                titleEl.textContent = heroCard.title;
+                titleEl.hidden = false;
+            } else {
+                titleEl.textContent = '';
+                titleEl.hidden = true;
+            }
+        }
+
+        if (subtitleEl) {
+            if (heroCard?.subtitle) {
+                subtitleEl.textContent = heroCard.subtitle;
+                subtitleEl.hidden = false;
+            } else {
+                subtitleEl.textContent = '';
+                subtitleEl.hidden = true;
+            }
+        }
+
+        if (descriptionEl) {
+            if (heroCard?.description) {
+                descriptionEl.textContent = heroCard.description;
+                descriptionEl.hidden = false;
+            } else {
+                descriptionEl.textContent = '';
+                descriptionEl.hidden = true;
+            }
+        }
+
+        const hasText = [titleEl, subtitleEl, descriptionEl].some((el) => el && !el.hidden);
+        if (cardEl) {
+            if (hasText) {
+                cardEl.classList.remove('hero__card--image-only');
+            } else {
+                cardEl.classList.add('hero__card--image-only');
+            }
+        }
+>>>>>>> main
     }
 
     function renderInventory() {
