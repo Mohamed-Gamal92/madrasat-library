@@ -8,8 +8,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css?v=20251117">
-</head>
-<body>
+ </head>
+ <body>
+    <div id="loginOverlay" class="login-overlay" aria-hidden="false">
+        <div class="login-overlay__card" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+            <h2 id="loginTitle" class="login-overlay__title">تسجيل الدخول</h2>
+            <p class="login-overlay__subtitle">من فضلك أدخل بيانات الدخول للوصول إلى لوحة الجرد والملفات.</p>
+            <form id="loginForm" class="login-overlay__form">
+                <label class="login-overlay__label">
+                    اسم المستخدم
+                    <input id="loginUsername" class="login-overlay__input" type="text" autocomplete="username" required>
+                </label>
+                <label class="login-overlay__label">
+                    كلمة المرور
+                    <input id="loginPassword" class="login-overlay__input" type="password" autocomplete="current-password" required>
+                </label>
+                <p id="loginError" class="login-overlay__error" hidden>بيانات الدخول غير صحيحة. حاول مرة أخرى.</p>
+                <button type="submit" class="btn btn--primary login-overlay__button">دخول</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="appContent" class="app-content" hidden>
     <header class="site-header">
         <div class="container">
             <div class="logo-group">
@@ -110,25 +130,9 @@
             <p id="footerNote">© <span id="currentYear"></span> مكتبة المعارف. تصميم ودّي بألوان بسيطة.</p>
         </div>
     </footer>
+    </div>
 
     <script src="assets/config.js?v=20251117"></script>
     <script src="assets/script.js?v=20251117"></script>
-	
-    <!-- تسجيل الخروج -->
-    <script>
-      const logoutLink = document.getElementById("logoutLink");
-      if (logoutLink) {
-        logoutLink.onclick = function (e) {
-          e.preventDefault();
-          localStorage.removeItem("madrasat_logged_in");
-          window.location.href = "login.html";
-        };
-      }
-    </script>
-
-    <!-- Scripts -->
-    <script src="assets/config.js"></script>
-    <script src="assets/script.js"></script>	
-
-</body>
-</html>
+ </body>
+ </html>

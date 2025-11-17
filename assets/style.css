@@ -28,6 +28,79 @@ body {
     min-height: 100vh;
 }
 
+.app-content[hidden] {
+    display: none !important;
+}
+
+.login-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    z-index: 999;
+}
+
+.login-overlay__card {
+    width: min(420px, 100%);
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    padding: 2rem 1.75rem;
+}
+
+.login-overlay__title {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--color-heading);
+}
+
+.login-overlay__subtitle {
+    margin: 0.75rem 0 1.25rem;
+    color: rgba(47, 60, 76, 0.75);
+    line-height: 1.7;
+}
+
+.login-overlay__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.login-overlay__label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    color: var(--color-heading);
+}
+
+.login-overlay__input {
+    border-radius: 999px;
+    border: 1px solid rgba(47, 60, 76, 0.2);
+    padding: 0.6rem 1rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.login-overlay__input:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.login-overlay__error {
+    margin: 0.2rem 0 0.4rem;
+    font-size: 0.9rem;
+    color: #c0392b;
+}
+
+.login-overlay__button {
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
 img {
     max-width: 100%;
     display: block;

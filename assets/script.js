@@ -1,6 +1,9 @@
 (function () {
     const config = window.APP_CONFIG;
 
+    const LOGIN_USERNAME = 'admin';
+    const LOGIN_PASSWORD = '1234';
+
     function setTextContent(id, text) {
         const el = document.getElementById(id);
         if (el && text) {
@@ -246,9 +249,42 @@
         });
     }
 
+    function initLogin() {
+        const overlay = document.getElementById('loginOverlay');
+        const appContent = document.getElementById('appContent');
+        const form = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('loginUsername');
+        const passwordInput = document.getElementById('loginPassword');
+        const errorEl = document.getElementById('loginError');
+
+        if (!overlay || !appContent || !form || !usernameInput || !passwordInput) {
+            return;
+        }
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const enteredUser = usernameInput.value.trim();
+            const enteredPass = passwordInput.value;
+
+            if (enteredUser === LOGIN_USERNAME && enteredPass === LOGIN_PASSWORD) {
+                if (errorEl) {
+                    errorEl.hidden = true;
+                }
+                overlay.style.display = 'none';
+                appContent.hidden = false;
+            } else {
+                if (errorEl) {
+                    errorEl.hidden = false;
+                }
+            }
+        });
+    }
+
     renderBranding();
     renderHero();
     renderInventory();
     renderStages();
     initMenuToggle();
+    initLogin();
 })();
