@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة المعارف – جرد الأدوات المدرسية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo-group">
+                <div class="logo" aria-hidden="true">📚</div>
+                <div class="titles">
+                    <h1 id="siteTitle">مكتبة المعارف – جرد الأدوات المدرسية</h1>
+                    <p id="siteTagline">منصة بسيطة لإدارة مخزون الأدوات والملفات الدراسية</p>
+                </div>
+            </div>
+            <button class="menu-toggle" aria-label="فتح القائمة">☰</button>
+            <nav class="main-nav" aria-label="القائمة الرئيسية">
+                <a href="#inventory" class="nav-link">الجرد</a>
+                <a href="#stages" class="nav-link">الملفات الدراسية</a>
+                <a href="#guide" class="nav-link">طريقة التعديل</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero" aria-labelledby="heroTitle">
+            <div class="container hero__content">
+                <div>
+                    <p class="hero__eyebrow" id="heroEyebrow">جاهز للاستخدام</p>
+                    <h2 class="hero__title" id="heroTitle">كل ما يلزمك لإدارة الجرد المدرسي بسهولة</h2>
+                    <p class="hero__subtitle" id="heroSubtitle">
+                        تتبع الأدوات المدرسية، حمل الملفات، وشارك الروابط مع الطاقم الإداري في مكان واحد بسيط.
+                    </p>
+                    <div class="hero__actions">
+                        <a id="heroPrimaryCta" class="btn btn--primary" href="#" target="_blank" rel="noopener">فتح جرد الأدوات</a>
+                        <a id="heroSecondaryCta" class="btn btn--ghost" href="#guide">طريقة التعديل</a>
+                    </div>
+                </div>
+                <div class="hero__card" aria-hidden="true">
+                    <div class="hero__illustration">✏️</div>
+                    <p>إدارة جاهزة<br>بدون برمجة</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="inventory" id="inventory">
+            <div class="container">
+                <div class="section-heading">
+                    <h3>جرد الأدوات</h3>
+                    <p>رابط مباشر لآخر ملف جرد للأدوات المدرسية.</p>
+                </div>
+                <div class="inventory__card">
+                    <h4 id="inventoryTitle">فتح جرد الأدوات</h4>
+                    <p id="inventoryDescription">يُفتح ملف Google Sheet في تبويب جديد لعرض أو تحديث المخزون.</p>
+                    <a id="inventoryButton" class="btn btn--secondary" href="#" target="_blank" rel="noopener">فتح ملف الجرد</a>
+                    <p class="inventory__hint" id="inventoryHint">يمكن تغيير الرابط من ملف الإعدادات بسهولة.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stages" id="stages">
+            <div class="container">
+                <div class="section-heading">
+                    <h3>الملفات الدراسية</h3>
+                    <p>اضغط على أي مستوى لعرض الملفات والروابط المرتبطة به.</p>
+                </div>
+                <div class="stages__grid" id="stagesContainer" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section class="guide" id="guide">
+            <div class="container">
+                <div class="section-heading">
+                    <h3>طريقة التعديل</h3>
+                    <p>تستطيع تحديث المحتوى دون لمس الشفرة البرمجية.</p>
+                </div>
+                <div class="guide__grid">
+                    <article class="guide__step">
+                        <h4>1. تحديث المعلومات العامة</h4>
+                        <p>افتح ملف <strong>assets/config.js</strong> باستخدام أي محرر نصوص، ثم حدِّث العنوان، الشعار، والأزرار في قسم <code>branding</code> و <code>hero</code>.</p>
+                    </article>
+                    <article class="guide__step">
+                        <h4>2. تغيير روابط الجرد</h4>
+                        <p>داخل نفس الملف، عدِّل قيمة <code>inventorySheetUrl</code> إلى رابط Google Sheet الجديد. يمكن أيضاً تحديث النصوص التوضيحية.</p>
+                    </article>
+                    <article class="guide__step">
+                        <h4>3. إضافة مرحلة أو ترم جديد</h4>
+                        <p>انسخ أي عنصر داخل المصفوفة <code>academicStages</code> وعدِّل البيانات (مثل <code>grade</code> و <code>term</code>). يمكن إضافة روابط لملفات PDF أو صور أو Google Drive بكل سهولة.</p>
+                    </article>
+                    <article class="guide__step">
+                        <h4>4. حفظ ومراجعة</h4>
+                        <p>بعد الحفظ، أعد تحميل الصفحة في المتصفح لمشاهدة التغييرات فوراً. لا حاجة لأي خطوات إضافية.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p id="footerNote">© <span id="currentYear"></span> مكتبة المعارف. تصميم ودّي بألوان بسيطة.</p>
+        </div>
+    </footer>
+
+    <script src="assets/config.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+</html>
