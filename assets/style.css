@@ -167,17 +167,11 @@ a {
     background-color: var(--color-white);
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
-<<<<<<< HEAD
-    padding: clamp(1.5rem, 5vw, 2rem);
-=======
     padding: clamp(1.5rem, 5vw, 2.2rem);
->>>>>>> main
     text-align: center;
     color: var(--color-heading);
 }
 
-<<<<<<< HEAD
-=======
 .hero__card--image-only {
     background: transparent;
     box-shadow: none;
@@ -193,15 +187,12 @@ a {
     box-shadow: inset 0 0 0 1px rgba(47, 60, 76, 0.04);
 }
 
->>>>>>> main
 .hero__illustration {
     font-size: clamp(2.5rem, 3rem + 1vw, 3.5rem);
     line-height: 1;
     margin-bottom: 1rem;
 }
 
-<<<<<<< HEAD
-=======
 .hero__card p {
     margin: 0.25rem 0 0;
 }
@@ -212,7 +203,6 @@ a {
     color: rgba(47, 60, 76, 0.7);
 }
 
->>>>>>> main
 .section-heading h3 {
     margin: 0;
     font-size: clamp(1.5rem, 1.5rem + 0.7vw, 2rem);

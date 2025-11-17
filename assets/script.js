@@ -34,11 +34,7 @@
     }
 
     function renderHero() {
-<<<<<<< HEAD
-        const { hero } = config;
-=======
         const { hero, heroCard } = config;
->>>>>>> main
         setTextContent('heroEyebrow', hero.eyebrow);
         setTextContent('heroTitle', hero.title);
         setTextContent('heroSubtitle', hero.subtitle);
@@ -54,8 +50,6 @@
             if (hero.secondaryCtaLabel) secondaryCta.textContent = hero.secondaryCtaLabel;
             if (hero.secondaryCtaTarget) secondaryCta.href = hero.secondaryCtaTarget;
         }
-<<<<<<< HEAD
-=======
 
         const cardEl = document.querySelector('.hero__card');
         const iconEl = document.getElementById('heroCardIcon');
@@ -122,7 +116,6 @@
                 cardEl.classList.add('hero__card--image-only');
             }
         }
->>>>>>> main
     }
 
     function renderInventory() {
