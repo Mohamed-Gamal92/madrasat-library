@@ -256,6 +256,7 @@
         const usernameInput = document.getElementById('loginUsername');
         const passwordInput = document.getElementById('loginPassword');
         const errorEl = document.getElementById('loginError');
+        const logoutButton = document.getElementById('logoutButton');
 
         if (!overlay || !appContent || !form || !usernameInput || !passwordInput) {
             return;
@@ -273,12 +274,29 @@
                 }
                 overlay.style.display = 'none';
                 appContent.hidden = false;
+                if (logoutButton) {
+                    logoutButton.hidden = false;
+                }
             } else {
                 if (errorEl) {
                     errorEl.hidden = false;
                 }
             }
         });
+
+        if (logoutButton) {
+            logoutButton.addEventListener('click', function () {
+                overlay.style.display = '';
+                appContent.hidden = true;
+                if (errorEl) {
+                    errorEl.hidden = true;
+                }
+                usernameInput.value = '';
+                passwordInput.value = '';
+                usernameInput.focus();
+                logoutButton.hidden = true;
+            });
+        }
     }
 
     renderBranding();
