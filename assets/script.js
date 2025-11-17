@@ -2,7 +2,7 @@
     const config = window.APP_CONFIG;
 
     const LOGIN_USERNAME = 'admin';
-    const LOGIN_PASSWORD = '1234';
+    const LOGIN_PASSWORD = '12345';
 
     function setTextContent(id, text) {
         const el = document.getElementById(id);
