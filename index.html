@@ -3,157 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتبة المعارف - الجرد والملفات الدراسية</title>
+    <title>مكتبة المعارف – جرد الأدوات والملفات الدراسية</title>
 
-    <!-- Google Fonts + Style -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/style.css?v=20251117">
+
+    <!-- 🔐 كود تسجيل الدخول -->
+    <script>
+        if (localStorage.getItem("madrasat_logged_in") !== "yes") {
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 
 <body>
 
-    <!-- 🔐 حماية تسجيل الدخول -->
-    <script>
-      if (localStorage.getItem("madrasat_logged_in") !== "yes") {
-        window.location.href = "login.html";
-      }
-    </script>
-    <!-- نهاية كود الحماية -->
+<header class="site-header">
+    <div class="container">
+        <div class="header-content">
 
-    <header class="site-header">
-        <div class="container">
-            <div class="header-content">
-                <h1 class="site-title">📚 مكتبة المعارف</h1>
-                <nav class="main-nav" aria-label="القائمة الرئيسية">
-                    <a href="#inventory" class="nav-link">الجرد</a>
-                    <a href="#stages" class="nav-link">الملفات الدراسية</a>
-                    <a href="#guide" class="nav-link">طريقة التعديل</a>
-                    <a href="#" id="logoutLink" class="nav-link" style="color:#c00;font-weight:600;">تسجيل الخروج</a>
-                </nav>
+            <h1 class="site-title">📚 مكتبة المعارف – للأدوات المدرسية</h1>
+            <p class="site-subtitle">منصة بسيطة لإدارة الأدوات والملفات الدراسية</p>
+
+            <nav class="main-nav" aria-label="القائمة الرئيسية">
+                <a href="#inventory" class="nav-link">الجرد</a>
+                <a href="#stages" class="nav-link">الملفات الدراسية</a>
+                <a href="#guide" class="nav-link">طريقة التعديل</a>
+                <a href="#" id="logoutLink" class="nav-link" style="color:#c0392b;font-weight:700;">تسجيل الخروج</a>
+            </nav>
+
+        </div>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="container hero-flex">
+        <div class="hero-image-box">
+            <img src="assets/store.jpg" alt="مكتبة الأدوات" class="hero-image">
+        </div>
+
+        <div class="hero-text">
+            <p class="hero-ready">جاهز للاستخدام</p>
+            <h2 class="hero-title">كل ما يلزمك لإدارة السنة الدراسية بسهولة</h2>
+            <p class="hero-desc">
+                تتبع الأدوات المدرسية، حمل الملفات، وشارك الروابط مع الطاقم الإداري في مكان واحد بسيط.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#inventory" class="main-btn">فتح جرد الأدوات</a>
+                <a href="#guide" class="main-btn secondary">طريقة التعديل</a>
             </div>
         </div>
-    </header>
+    </div>
+</section>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2 class="hero-title">نظام الجرد والملفات المدرسية</h2>
-                <p class="hero-subtitle">كل ملفات المراحل الدراسية وجرد المكتبة في مكان واحد.</p>
-                <div class="hero-btns">
-                    <a href="#inventory" class="main-btn">عرض الجرد</a>
-                    <a href="#stages" class="main-btn secondary">الملفات الدراسية</a>
-                </div>
-            </div>
+<!-- INVENTORY SECTION -->
+<section id="inventory" class="inventory-section">
+    <div class="container">
+        <h2 class="section-title">📦 الجرد</h2>
+
+        <div class="box-grid">
+            <a href="https://docs.google.com/spreadsheets/d/1otjNU6Ft2lJkDYpHZtotDywowQ7oYRSsUJVx7IxTdSA/edit?usp=sharing"
+               target="_blank" class="box">
+                <img src="assets/inventory.png" alt="جرد المكتبة" class="box-icon">
+                <h3 class="box-title">جرد المكتبة</h3>
+                <p class="box-text">اضغط لفتح الجرد مباشرة</p>
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- INVENTORY SECTION -->
-    <section id="inventory" class="inventory-section">
-        <div class="container">
-            <h2 class="section-title">📦 الجرد</h2>
+<!-- STAGES SECTION -->
+<section id="stages" class="stages-section">
+    <div class="container">
+        <h2 class="section-title">📁 الملفات الدراسية</h2>
 
-            <div class="box-grid">
-                <a href="https://docs.google.com/spreadsheets/d/1otjNU6Ft2lJkDYpHZtotDywowQ7oYRSsUJVx7IxTdSA/edit?usp=sharing"
-                   target="_blank" class="box">
-                    <img src="assets/inventory.png" alt="جرد المكتبة" class="box-icon">
-                    <h3 class="box-title">جرد المكتبة</h3>
-                    <p class="box-text">اضغط لفتح الجرد مباشرة</p>
-                </a>
-            </div>
+        <div class="stage-grid">
+
+            <a href="assets/kg1-term1/" class="stage-card">
+                <img src="assets/kg1.png" class="stage-icon">
+                <h3 class="stage-title">KG1 – الترم الأول</h3>
+            </a>
+
+            <a href="assets/kg2-term1/" class="stage-card">
+                <img src="assets/kg2.png" class="stage-icon">
+                <h3 class="stage-title">KG2 – الترم الأول</h3>
+            </a>
+
+            <a href="assets/سنة أولى-term1/" class="stage-card">
+                <img src="assets/grade1.png" class="stage-icon">
+                <h3 class="stage-title">سنة أولى – الترم الأول</h3>
+            </a>
+
+            <a href="assets/سنة تانية-term1/" class="stage-card">
+                <img src="assets/grade2.png" class="stage-icon">
+                <h3 class="stage-title">سنة تانية – الترم الأول</h3>
+            </a>
+
+            <a href="assets/سنة تالتة-term1/" class="stage-card">
+                <img src="assets/grade3.png" class="stage-icon">
+                <h3 class="stage-title">سنة تالتة – الترم الأول</h3>
+            </a>
+
+            <a href="assets/سنة رابعة-term1/" class="stage-card">
+                <img src="assets/grade4.png" class="stage-icon">
+                <h3 class="stage-title">سنة رابعة – الترم الأول</h3>
+            </a>
+
+            <a href="assets/سنة خامسة-term1/" class="stage-card">
+                <img src="assets/grade5.png" class="stage-icon">
+                <h3 class="stage-title">سنة خامسة – الترم الأول</h3>
+            </a>
+
+            <a href="assets/سنة سادسة-term1/" class="stage-card">
+                <img src="assets/grade6.png" class="stage-icon">
+                <h3 class="stage-title">سنة سادسة – الترم الأول</h3>
+            </a>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- STAGES SECTION -->
-    <section id="stages" class="stages-section">
-        <div class="container">
-            <h2 class="section-title">📁 الملفات الدراسية</h2>
+<!-- GUIDE SECTION -->
+<section id="guide" class="guide-section">
+    <div class="container">
+        <h2 class="section-title">🛠 طريقة التعديل</h2>
 
-            <div class="stage-grid">
+        <p class="guide-text">
+            يمكنك تعديل الملفات الدراسية من خلال مجلد <strong>assets</strong>.  
+            كما يمكنك تحديث رابط الجرد بسهولة.
+        </p>
+    </div>
+</section>
 
-                <!-- KG1 -->
-                <a href="assets/kg1-term1/" class="stage-card">
-                    <img src="assets/kg1.png" class="stage-icon" alt="KG1">
-                    <h3 class="stage-title">KG1 - الترم الأول</h3>
-                </a>
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2025 مكتبة المعارف – جميع الحقوق محفوظة</p>
+    </div>
+</footer>
 
-                <!-- KG2 -->
-                <a href="assets/kg2-term1/" class="stage-card">
-                    <img src="assets/kg2.png" class="stage-icon" alt="KG2">
-                    <h3 class="stage-title">KG2 - الترم الأول</h3>
-                </a>
-
-                <!-- سنة أولى -->
-                <a href="assets/سنة أولى-term1/" class="stage-card">
-                    <img src="assets/grade1.png" class="stage-icon" alt="Grade 1">
-                    <h3 class="stage-title">سنة أولى - الترم الأول</h3>
-                </a>
-
-                <!-- سنة تانية -->
-                <a href="assets/سنة تانية-term1/" class="stage-card">
-                    <img src="assets/grade2.png" class="stage-icon" alt="Grade 2">
-                    <h3 class="stage-title">سنة تانية - الترم الأول</h3>
-                </a>
-
-                <!-- سنة تالتة -->
-                <a href="assets/سنة تالتة-term1/" class="stage-card">
-                    <img src="assets/grade3.png" class="stage-icon" alt="Grade 3">
-                    <h3 class="stage-title">سنة تالتة - الترم الأول</h3>
-                </a>
-
-                <!-- سنة رابعة -->
-                <a href="assets/سنة رابعة-term1/" class="stage-card">
-                    <img src="assets/grade4.png" class="stage-icon" alt="Grade 4">
-                    <h3 class="stage-title">سنة رابعة - الترم الأول</h3>
-                </a>
-
-                <!-- سنة خامسة -->
-                <a href="assets/سنة خامسة-term1/" class="stage-card">
-                    <img src="assets/grade5.png" class="stage-icon" alt="Grade 5">
-                    <h3 class="stage-title">سنة خامسة - الترم الأول</h3>
-                </a>
-
-                <!-- سنة سادسة -->
-                <a href="assets/سنة سادسة-term1/" class="stage-card">
-                    <img src="assets/grade6.png" class="stage-icon" alt="Grade 6">
-                    <h3 class="stage-title">سنة سادسة - الترم الأول</h3>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- GUIDE -->
-    <section id="guide" class="guide-section">
-        <div class="container">
-            <h2 class="section-title">🛠 طريقة التعديل</h2>
-            <p class="guide-text">يمكنك تعديل الملفات أو الجرد بسهولة عبر GitHub أو Google Drive.</p>
-        </div>
-    </section>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>© 2025 مكتبة المعارف – جميع الحقوق محفوظة</p>
-        </div>
-    </footer>
-
-    <!-- تسجيل الخروج -->
-    <script>
-      const logoutLink = document.getElementById("logoutLink");
-      if (logoutLink) {
+<!-- 🔓 تسجيل الخروج -->
+<script>
+    const logoutLink = document.getElementById("logoutLink");
+    if (logoutLink) {
         logoutLink.onclick = function (e) {
-          e.preventDefault();
-          localStorage.removeItem("madrasat_logged_in");
-          window.location.href = "login.html";
+            e.preventDefault();
+            localStorage.removeItem("madrasat_logged_in");
+            window.location.href = "login.html";
         };
-      }
-    </script>
+    }
+</script>
 
-    <!-- Scripts -->
-    <script src="assets/config.js"></script>
-    <script src="assets/script.js"></script>
+<!-- Scripts -->
+<script src="assets/config.js"></script>
+<script src="assets/script.js"></script>
 
 </body>
 </html>
